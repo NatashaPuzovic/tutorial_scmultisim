@@ -1,0 +1,21 @@
+# Conda environment for the scMultiSim tutorial.
+#   mamba env create -f environment.yml
+#   conda activate scmultisim
+name: scmultisim
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base=4.5
+  - bioconductor-scmultisim
+  - bioconductor-singlecellexperiment
+  - bioconductor-scuttle
+  - bioconductor-scran
+  - r-ape
+  - r-rtsne
+  - r-mass
+  - r-rmarkdown
+  - r-knitr
+  - pandoc
+  # Optional, only for the BASiCS appendix (large install):
+  # - bioconductor-basics

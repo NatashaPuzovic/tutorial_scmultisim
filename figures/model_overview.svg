@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 490" width="990" height="490" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <style>
+      .t  { font-size: 14px; font-weight: bold; fill: #222; }
+      .d  { font-size: 11.5px; fill: #444; }
+      .l  { font-size: 11.5px; fill: #333; font-style: italic; }
+      .x  { font-size: 26px; fill: #555; }
+      .ln { stroke: #444; stroke-width: 1.6; fill: none; marker-end: url(#arr); }
+      .atac { fill: #f1e9f8; stroke: #7b4fa0; stroke-width: 1.5; }
+      .rna  { fill: #e7f0fa; stroke: #2b6cb0; stroke-width: 1.5; }
+      .kin  { fill: #fdf0e1; stroke: #c06d12; stroke-width: 1.5; }
+      .tree { fill: #eaf6ee; stroke: #2f8a4f; stroke-width: 1.5; }
+      .tech { fill: #f9e8e8; stroke: #b03a3a; stroke-width: 1.5; }
+    </style>
+  </defs>
+  <rect width="990" height="490" fill="#ffffff"/>
+
+  <!-- row labels -->
+  <text x="20" y="28" class="t" fill="#7b4fa0">scATAC side</text>
+  <text x="20" y="212" class="t">scRNA side</text>
+  <text x="20" y="420" class="t">measurement</text>
+
+  <!-- tree -->
+  <rect x="20" y="120" width="135" height="70" rx="8" class="tree"/>
+  <text x="87" y="145" text-anchor="middle" class="t">tree</text>
+  <text x="87" y="162" text-anchor="middle" class="d">cell-type relations</text>
+  <text x="87" y="177" text-anchor="middle" class="d">(Phyla5, diff.cif.fraction)</text>
+  <path d="M155,140 L178,85" class="ln"/>
+  <path d="M155,170 L178,240" class="ln"/>
+
+  <!-- GRN input -->
+  <rect x="20" y="305" width="135" height="70" rx="8" class="tree"/>
+  <text x="87" y="330" text-anchor="middle" class="t">GRN</text>
+  <text x="87" y="347" text-anchor="middle" class="d">TF → target edges</text>
+  <text x="87" y="362" text-anchor="middle" class="d">(GRN_params_100)</text>
+  <path d="M155,340 L440,340 L440,298" class="ln"/>
+  <text x="300" y="333" text-anchor="middle" class="l">sets the s GIV of TFs and targets</text>
+
+  <!-- ATAC row -->
+  <rect x="180" y="45" width="150" height="70" rx="8" class="atac"/>
+  <text x="255" y="72" text-anchor="middle" class="t">CIF (ATAC)</text>
+  <text x="255" y="90" text-anchor="middle" class="d">cells × CIFs</text>
+  <text x="255" y="105" text-anchor="middle" class="d">who the cell is</text>
+  <text x="347" y="90" text-anchor="middle" class="x">×</text>
+  <rect x="365" y="45" width="150" height="70" rx="8" class="atac"/>
+  <text x="440" y="72" text-anchor="middle" class="t">RIV</text>
+  <text x="440" y="90" text-anchor="middle" class="d">regions × CIFs</text>
+  <text x="440" y="105" text-anchor="middle" class="d">how a region listens</text>
+  <path d="M515,80 L558,80" class="ln"/>
+  <rect x="560" y="45" width="180" height="70" rx="8" class="atac"/>
+  <text x="650" y="72" text-anchor="middle" class="t">true ATAC</text>
+  <text x="650" y="90" text-anchor="middle" class="d">regions × cells</text>
+  <text x="650" y="105" text-anchor="middle" class="d">atacseq_data / atac_counts</text>
+
+  <!-- ATAC -> kon -->
+  <path d="M610,115 L610,223" class="ln"/>
+  <text x="602" y="160" text-anchor="end" class="l">region_to_gene,</text>
+  <text x="602" y="175" text-anchor="end" class="l">atac.effect → kon</text>
+
+  <!-- RNA row -->
+  <rect x="180" y="225" width="150" height="70" rx="8" class="rna"/>
+  <text x="255" y="252" text-anchor="middle" class="t">CIF (kon, koff, s)</text>
+  <text x="255" y="270" text-anchor="middle" class="d">cells × CIFs</text>
+  <text x="255" y="285" text-anchor="middle" class="d">who the cell is</text>
+  <text x="347" y="270" text-anchor="middle" class="x">×</text>
+  <rect x="365" y="225" width="150" height="70" rx="8" class="rna"/>
+  <text x="440" y="252" text-anchor="middle" class="t">GIV (kon, koff, s)</text>
+  <text x="440" y="270" text-anchor="middle" class="d">genes × CIFs</text>
+  <text x="440" y="285" text-anchor="middle" class="d">how a gene listens</text>
+  <path d="M515,260 L558,260" class="ln"/>
+  <rect x="560" y="225" width="180" height="70" rx="8" class="kin"/>
+  <text x="650" y="252" text-anchor="middle" class="t">kinetic parameters</text>
+  <text x="650" y="270" text-anchor="middle" class="d">kon, koff, s: genes × cells</text>
+  <text x="650" y="285" text-anchor="middle" class="d">rank-matched to real data</text>
+  <path d="M740,260 L788,260" class="ln"/>
+  <text x="764" y="250" text-anchor="middle" class="l">Beta–</text>
+  <text x="764" y="280" text-anchor="middle" class="l">Poisson</text>
+  <rect x="790" y="225" width="150" height="70" rx="8" class="rna"/>
+  <text x="865" y="252" text-anchor="middle" class="t">true RNA</text>
+  <text x="865" y="270" text-anchor="middle" class="d">genes × cells</text>
+  <text x="865" y="285" text-anchor="middle" class="d">results$counts</text>
+
+  <!-- GRN feedback -->
+  <path d="M865,225 C865,170 700,170 700,222" class="ln"/>
+  <text x="790" y="165" text-anchor="middle" class="l">GRN: TF levels in each cell → s of targets</text>
+
+  <!-- measurement row -->
+  <path d="M865,295 L865,403" class="ln"/>
+  <path d="M740,80 L965,80 L965,435 L942,435" class="ln"/>
+  <rect x="790" y="405" width="150" height="62" rx="8" class="tech"/>
+  <text x="865" y="430" text-anchor="middle" class="t">add_expr_noise()</text>
+  <text x="865" y="448" text-anchor="middle" class="d">capture α, PCR, depth</text>
+  <path d="M790,436 L742,436" class="ln"/>
+  <rect x="560" y="405" width="180" height="62" rx="8" class="tech"/>
+  <text x="650" y="430" text-anchor="middle" class="t">observed RNA + ATAC</text>
+  <text x="650" y="448" text-anchor="middle" class="d">counts_obs, atacseq_obs</text>
+  <path d="M560,436 L517,436" class="ln"/>
+  <rect x="365" y="405" width="150" height="62" rx="8" class="tech"/>
+  <text x="440" y="430" text-anchor="middle" class="t">divide_batches()</text>
+  <text x="440" y="448" text-anchor="middle" class="d">counts_with_batches</text>
+</svg>

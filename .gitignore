@@ -1,0 +1,20 @@
+# R / RStudio
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# knitr / rmarkdown by-products (the rendered tutorial lives in docs/)
+*_cache/
+*_files/
+Tutorial_scMultiSim.html
+
+# large or local-only outputs
+*.rds
+basics_chains.rds
+
+# local drafts
+*.draft.Rmd
+
+# plots R writes when there is no screen
+Rplots.pdf
